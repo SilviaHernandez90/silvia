@@ -47,6 +47,16 @@ public class DepartamentoController {
       return ResponseEntity.of(Optional.ofNullable(departamentoService.updateDepartamento(departamentoRequest)));
     }
 
+    @GetMapping("/alldepartamentos")
+    public ResponseEntity<List<DepartamentoResponse>> getAllDepartamentos(){
+        return ResponseEntity.of(Optional.ofNullable(departamentoService.getAllDepartamentos()));
+    }
+
+    @GetMapping("/alldepartamentos2")
+    public ResponseEntity<List<DepartamentoResponse>> getAllDepartamentos2(){
+        return ResponseEntity.of(Optional.ofNullable(departamentoService.getAllDepartamentos2()));
+    }
+
 
 
 }

@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static org.antlr.v4.runtime.atn.SemanticContext.and;
+
 @Service
 public class DepartamentoService {
 
@@ -58,6 +60,26 @@ public class DepartamentoService {
         }
 
         return departamentoResponse; //retorna
+    }
+
+    public List<DepartamentoResponse> getAllDepartamentos(){
+        List<Departamento> listadepartamentos = departamentoRepository.findAll();
+        List<DepartamentoResponse> departamentosResponse = new ArrayList<>();
+
+        for (Departamento departamento : listadepartamentos) {
+            departamentosResponse.add(new DepartamentoResponse(departamento.getId(),departamento.getNombre(),departamento.getLocalidad()));
+
+        }
+        return departamentosResponse;
+
+    }
+    public List<DepartamentoResponse> getAllDepartamentos2(){
+        List<Departamento> listaDEpartamentos = departamentoRepository.findAll();
+        List<DepartamentoResponse> departamentosResponse2 = new ArrayList<>();
+        for (Departamento departamento : listaDEpartamentos) {
+            departamentosResponse2.add(new DepartamentoResponse(departamento.getId(),departamento.getNombre(),departamento.getLocalidad()));
+        }
+        return departamentosResponse2;
     }
 
 
