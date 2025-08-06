@@ -34,6 +34,7 @@ public class TareaController {
     public ResponseEntity<List<TareaInformacionResponse>> getInformacionTarea(){
        return ResponseEntity.of(Optional.ofNullable(tareaService.getInformacionTareas()));
    }
+   //aprendiendo git y github
 
 
 }
