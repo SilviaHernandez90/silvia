@@ -82,6 +82,7 @@ public class EmpleadoController {
 
     }
 
+    //Comentario de Israel
     @GetMapping("/informacion")
     public ResponseEntity<List<EmpleadoInformacionResponse>> getInformacionEmpleados(){
         return ResponseEntity.of(Optional.ofNullable(empleadoService.getInformacionEmpleados()));
